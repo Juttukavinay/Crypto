@@ -1,4 +1,4 @@
-class Main {
+class HillCipher {
 
     // Function to generate the key matrix
     static void getKeyMatrix(String key, int keyMatrix[][]) {
