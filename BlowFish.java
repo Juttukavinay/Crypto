@@ -23,9 +23,9 @@ public class BlowFish {
                 System.out.println("Initialization Vector: " + Base64.getEncoder().encodeToString(iv));
             }
 
-            // Open File Streams
-            FileInputStream fin = new FileInputStream("inputFile.txt");
-            FileOutputStream fout = new FileOutputStream("outputFile.txt");
+            // Open File Streams (use absolute path for input file)
+            FileInputStream fin = new FileInputStream("C:\\Users\\juttu\\Desktop\\inputFile.txt");  // Update path
+            FileOutputStream fout = new FileOutputStream("C:\\Users\\juttu\\Desktop\\outputFile.txt");  // Update path
             CipherOutputStream cout = new CipherOutputStream(fout, cipherOut);
 
             // Read and Encrypt File
@@ -47,9 +47,3 @@ public class BlowFish {
         }
     }
 }
-   
-            
-            
-            
-                     
-            
