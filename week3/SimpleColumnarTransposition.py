@@ -32,14 +32,14 @@ def decryptMessage(cipher, key):
     key_indices = []
     key_order = sorted(list(set(key)))
 
-    # Mapping key to indices
+  
     for char in key:
         key_indices.append(key_order.index(char))
 
     col = len(key)
     row = math.ceil(len(cipher) / col)
 
-    # Creating an empty matrix
+
     dec_cipher = [[""] * col for _ in range(row)]
 
     index = 0
@@ -48,19 +48,17 @@ def decryptMessage(cipher, key):
             dec_cipher[r][key_index] = cipher[index]
             index += 1
 
-    # Converting matrix back to string
     msg = "".join("".join(row) for row in dec_cipher)
     msg = msg.replace("_", " ")  # Restore spaces
 
     return msg.strip("_")
 
 
-# 🚀 **Dynamic User Input**
 msg = input("Enter your message: ")
-key = input("Enter your key: ").upper()  # Convert key to uppercase
+key = input("Enter your key: ").upper()  
 
 cipher = encryptMessage(msg, key)
-print("🔒 Encrypted Message:", cipher)
+print(" Encrypted Message:", cipher)
 
 decrypted_msg = decryptMessage(cipher, key)
-print("🔓 Decrypted Message:", decrypted_msg)
+print(" Decrypted Message:", decrypted_msg)
